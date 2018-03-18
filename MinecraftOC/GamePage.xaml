@@ -1,0 +1,193 @@
+﻿<Page x:Class="MinecraftOC.GamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MinecraftOC"
+      mc:Ignorable="d" d:DesignWidth="1920"
+      Height="1028" Width="1920"
+      Title="GamePage"
+      >
+
+    <Grid Margin="0,0,0,10">
+        <Grid.Background>
+            <ImageBrush ImageSource="Pictures\dirt.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListView Background="LightGray" x:Name="inventory" Grid.Row="2" Grid.RowSpan="6" Grid.ColumnSpan="5" FontFamily="Minecraft" FontSize="27" HorizontalAlignment="Center" Width="475" Margin="30,0,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Item" DisplayMemberBinding="{Binding Name}" Width="220"/>
+                    <GridViewColumn Header="Amount" DisplayMemberBinding="{Binding Value}" Width="120"/>
+                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="120"/>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Button Content="Fight" Grid.Column="13" ToolTip="Get some EXP for higher level" Grid.Row="3" Grid.ColumnSpan="2" FontSize="40" Margin="0,10" Click="Fight_Click">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/button.png"  ></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Mine" Grid.Column="13"  Grid.Row="4" ToolTip="Get some ores" Grid.ColumnSpan="2" FontSize="40" Margin="0,10" Click="Mine_Click">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/button.png"  />
+            </Button.Background>
+        </Button>
+        <Button Content="Explore" Grid.Column="13" ToolTip="Get some food and material" Grid.Row="5" Grid.ColumnSpan="2" FontSize="40" Margin="0,10" Click="Explore_Click">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/button.png"  />
+            </Button.Background>
+        </Button>
+        <Button Content="Sleep" ToolTip="Restore your energy and some HP" Grid.Column="13"  Grid.Row="6" Grid.ColumnSpan="2" FontSize="40" Margin="0,10" Click="Sleep_Click">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/button.png"  />
+            </Button.Background>
+        </Button>
+        <Rectangle Grid.Column="13" Fill="#FFF4F4F5" Grid.RowSpan="3" Stroke="Black" Grid.ColumnSpan="5" Margin="0,45,0,5"/>
+
+        <Label Content="LEVEL: " Grid.Column="13" Margin="10,55,72,0" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Grid.ColumnSpan="2" Height="39"/>
+        <Label x:Name="level_label" Content="1" Grid.Column="14" Margin="29,55,10,0" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Height="39"/>
+        <ProgressBar ToolTip="EXP Bar" x:Name="xp_bar" Minimum="0" Maximum="8" Foreground="LightBlue" Grid.ColumnSpan="5" Grid.Column="13" HorizontalAlignment="Left" Height="41" Margin="10,92,0,0" VerticalAlignment="Top" Width="485" Grid.RowSpan="2"/>
+
+        <Label Content="ENERGY: " Grid.Column="13" Margin="10,55,43,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Grid.ColumnSpan="2" Height="39"/>
+
+        <Label Content="LOCATION: " Grid.Column="13" Margin="10,0" Grid.Row="2" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Grid.ColumnSpan="2" Height="39"/>
+        <Label x:Name="location_label" Content="FOREST" Grid.Column="14" Margin="91,0,0,0" Grid.Row="2" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Height="39" Grid.ColumnSpan="3"/>
+
+        <Button Content="TAIGA" ToolTip="Travel to Taiga" Foreground="White" Grid.Column="5"  Grid.Row="2" Grid.ColumnSpan="4" FontSize="40" Grid.RowSpan="3" Click="Taiga_Click" Margin="47,0,56,0">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/taiga.png"  />
+            </Button.Background>
+        </Button>
+        <Button Content="FOREST" Grid.Column="9" ToolTip="Travel to Forest" Foreground="White" Grid.Row="2" Grid.ColumnSpan="4" FontSize="40" Grid.RowSpan="3" Click="Forest_Click" Margin="46,0,54,0">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/forest.png"  />
+            </Button.Background>
+        </Button>
+        <Button Content="JUNGLE"  Grid.Column="5" ToolTip="Travel to Jungle" Foreground="White" Grid.Row="6" Grid.ColumnSpan="4" FontSize="40" Grid.RowSpan="3" Click="Jungle_Click" Margin="47,0,56,0">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/jungle.png"  />
+            </Button.Background>
+        </Button>
+        <Button Content="DESERT" Grid.Column="9" ToolTip="Travel to Desert" Foreground="White" Grid.Row="6" Grid.ColumnSpan="4" FontSize="40" Grid.RowSpan="3" Click="Desert_Click" Margin="46,0,54,0">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/desert.png"  />
+            </Button.Background>
+        </Button>
+        <Label Grid.RowSpan="2" Grid.Row="9" Grid.ColumnSpan="19" Margin="0,50,0,0">
+            <Label.Background>
+                <ImageBrush ImageSource ="Pictures/stonebox.png"  />
+            </Label.Background>
+        </Label>
+        <Label x:Name="status_label" Foreground="White" Content="Welcome to Minecraft on-click game!" FontFamily="Minecraft" FontSize="50" Grid.ColumnSpan="19" Margin="10,56,10,58" Grid.Row="9" Grid.RowSpan="2"/>
+        <Label x:Name="warning_label" Foreground="Red" Content="" FontFamily="Minecraft" FontSize="50" Grid.ColumnSpan="19" Margin="10,21,10,0" Grid.Row="10"/>
+        <Label Grid.Row="3" Grid.Column="15" Grid.ColumnSpan="2" Margin="51,0,50,0">
+            <Label.Background>
+                <ImageBrush ImageSource ="Pictures/item_holder.png"  />
+            </Label.Background>
+        </Label>
+
+        <Label Grid.Row="4" Grid.Column="15" Grid.ColumnSpan="2" Margin="51,0,50,0">
+            <Label.Background>
+                <ImageBrush ImageSource ="Pictures/item_holder.png"  />
+            </Label.Background>
+        </Label>
+
+        <Image x:Name="image_sword" Source="/Pictures/Wooden_Sword.png" Grid.ColumnSpan="2" Grid.Column="15" Margin="61,9,60,10" Grid.Row="3"/>
+        <Image x:Name="image_pickaxe" Source="/Pictures/Wooden_Pickaxe.png" Grid.ColumnSpan="2" Grid.Column="15" Margin="60,8,61,10" Grid.Row="4"/>
+        <Label x:Name="quest_label" Content="Complete all 15 quests ASAP - 1. QUEST: Go to Jungle" FontSize="50" FontFamily="Minecraft" HorizontalAlignment="Left" Margin="20,46,0,0" VerticalAlignment="Top" Grid.ColumnSpan="13" Height="97" Grid.RowSpan="2" Width="1294" Foreground="White"/>
+
+
+        <Label Content="DAY: " Grid.Column="13" Margin="10,39,10,0" Grid.Row="2" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Grid.ColumnSpan="2" Height="39"/>
+
+        <Label x:Name="day_label" Content="1" Grid.Column="14" Margin="0,39,39,0" Grid.Row="2" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Height="39"/>
+
+        <ProgressBar ToolTip="Health Bar" x:Name="hp_bar" Minimum="0" Maximum="20" Value="20" Foreground="Red" Grid.ColumnSpan="5" Grid.Column="13" HorizontalAlignment="Left" Height="50" Margin="0,23,0,0" Grid.Row="7" VerticalAlignment="Top" Width="505"/>
+
+        <ProgressBar ToolTip="Hunger Bar" x:Name="hunger_bar" Minimum="0" Maximum="20" Value="20" Foreground="SandyBrown" Grid.ColumnSpan="5" Grid.Column="13" HorizontalAlignment="Left" Height="50" Grid.Row="8" VerticalAlignment="Top" Width="505"/>
+
+        <ProgressBar ToolTip="Armor Bar" x:Name="armor_bar" Minimum="0" Maximum="20" Value="0" Foreground="Gray" Grid.ColumnSpan="5" Grid.Column="13" HorizontalAlignment="Left" Height="50" Margin="0,70,0,0" Grid.Row="8" VerticalAlignment="Top" Width="505" Grid.RowSpan="2"/>
+
+        <Label x:Name="xp_label"  HorizontalContentAlignment="Center" Content="0" Grid.Column="14" Margin="68,1,72,0" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Height="44" RenderTransformOrigin="0.935,-0.029" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Label x:Name="maxxp_label" Content="8"  HorizontalContentAlignment="Center" Grid.Column="15" Margin="70,1,70,0" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Height="44" Grid.ColumnSpan="2" Grid.Row="1"/>
+
+        <Label x:Name="hp_label"  HorizontalContentAlignment="Center" Content="20" Grid.Column="15" Margin="24,29,15,0" Grid.Row="7" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Height="39"/>
+        <Label x:Name="hunger_label"  HorizontalContentAlignment="Center" Content="20" Grid.Column="15" Margin="24,6,15,0" Grid.Row="8" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Height="40"/>
+        <Label x:Name="armor_label"  HorizontalContentAlignment="Center" Content="0" Grid.Column="15" Margin="24,76,15,0" Grid.Row="8" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Height="39" Grid.RowSpan="2"/>
+
+        <Image x:Name="house_image" Source="/Pictures/house1.png" Grid.ColumnSpan="2" Grid.Column="15" Margin="12,9,10,10" Grid.Row="5" Grid.RowSpan="2"></Image>
+        <Label Content="/" Grid.Column="15" Margin="37,92,39,0" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Height="39" Grid.RowSpan="2"/>
+
+        <ProgressBar ToolTip="Energy Bar" x:Name="energy_bar" Minimum="0" Maximum="3" Value="3"  Foreground="Yellow" Grid.ColumnSpan="4" Grid.Column="14" HorizontalAlignment="Left" Height="41" Margin="63,52,0,0" VerticalAlignment="Top" Width="331" Grid.Row="1"/>
+        <Label x:Name="energy_label" HorizontalContentAlignment="Center" Content="3" Grid.Column="15" Margin="51,56,89,0" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Height="39" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2"/>
+        <Label Content="/" Grid.Column="16" Margin="20,55,56,0" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Height="39" Grid.Row="1" Grid.RowSpan="2"/>
+        <Label x:Name="maxenergy_label" Content="3" HorizontalContentAlignment="Center" Grid.Column="16" Margin="53,56,91,0" VerticalAlignment="Top" FontFamily="Minecraft" FontSize="30" Height="39" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2"/>
+        <Button Content="Eat" x:Name="ItemButton" ToolTip="Select food to eat it and restore your Hunger Bar"  Grid.Row="8" Grid.ColumnSpan="3" FontSize="40" Margin="50,10,61,10" Click="Eat_Click">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/button.png"  />
+            </Button.Background>
+        </Button>
+        <ComboBox FontFamily="Minecraft" HorizontalAlignment="Center" x:Name="CraftBox" HorizontalContentAlignment="Center" ToolTip="Select item which you want to craft from selcted material"  Grid.Row="8" Grid.ColumnSpan="3" FontSize="30"  Margin="82,88,29,47" Grid.Column="2" Grid.RowSpan="2" Width="192">
+            <ComboBox.Background>
+                <ImageBrush ImageSource ="Pictures/button.png"  />
+            </ComboBox.Background>
+        </ComboBox>
+        <Button Content="↑" Visibility="Visible" x:Name="EnergyButton" Grid.Row="6" FontSize="40" Margin="45,39,10,10" Grid.Column="16" Click="Upgrade_Click">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/button.png"  />
+            </Button.Background>
+        </Button>
+        <Button Content="Craft" x:Name="CraftButton" ToolTip="Craft new equipment"  Grid.Row="8" Grid.ColumnSpan="3" FontSize="40" Margin="0,10,29,10" Click="Craft_Click" Grid.Column="2" HorizontalAlignment="Right" Width="192">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/button.png"  />
+            </Button.Background>
+        </Button>
+
+        <Image x:Name="image_helmet_holder" Source="Pictures/helmet_holder.png" Grid.Column="17" Grid.Row="3" Margin="8,0,0,0"/>
+        <Image x:Name="image_helmet" Grid.Column="17" Margin="10,11,0,6" Grid.Row="3"/>
+
+        <Image x:Name="image_chestplate_holder" Source="Pictures/chestplate_holder.png" Grid.Column="17" Grid.Row="4" Margin="8,0,0,0"/>
+        <Image x:Name="image_leggins_holder" Source="Pictures/leggins_holder.png" Grid.Column="17" Grid.Row="4" Margin="8,92,0,0" Grid.RowSpan="2"/>
+        <Image x:Name="image_boots_holder" Source="Pictures/boots_holder.png" Grid.Column="17" Grid.Row="6" Margin="8,0,0,0"/>
+
+        <Image x:Name="image_chestplate" Grid.Column="17" Margin="10,10,0,7" Grid.Row="4"/>
+        <Image x:Name="image_leggins" Grid.Column="17" Margin="10,8,0,8" Grid.Row="5"/>
+        <Image x:Name="image_boots" Grid.Column="17" Margin="10,9,0,8" Grid.Row="6"/>
+        <Frame x:Name="die_frame" Grid.ColumnSpan="19" Grid.RowSpan="11" NavigationUIVisibility="Hidden" Visibility="Hidden"/>
+    </Grid>
+
+</Page>

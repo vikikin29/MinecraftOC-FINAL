@@ -16,23 +16,24 @@ using System.Windows.Shapes;
 namespace MinecraftOC
 {
     /// <summary>
-    /// Interakční logika pro MainWindow.xaml
+    /// Interakční logika pro GameOver.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GameOver : Page
     {
-        public MainWindow()
+        public GameOver()
         {
             InitializeComponent();
         }
+
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void NewGameButton_Click(object sender, RoutedEventArgs e)
+        private void ContinueButton_Click(object sender, RoutedEventArgs e)
         {
-            GamePage gamePage = new GamePage();
-            this.Content = gamePage;
+            cont_frame.Source = new Uri("GamePage.xaml", UriKind.Relative);
+            cont_frame.Visibility = Visibility.Visible;
         }
     }
 }

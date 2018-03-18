@@ -1,0 +1,47 @@
+﻿<Page x:Class="MinecraftOC.GameOver"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MinecraftOC"
+      mc:Ignorable="d" 
+      d:DesignHeight="1028" d:DesignWidth="1920"
+      Title="GameOver">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Pictures/dirt.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition Width="44*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="QuitButton" FontSize="50" Content="Quit" Grid.Row="6" Click="QuitButton_Click" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/button.png"  />
+            </Button.Background>
+        </Button>
+        <Label Content="YOU DIED!" FontFamily="Minecraft" FontSize="90" HorizontalContentAlignment="Center" Foreground="Yellow" Grid.Column="1" HorizontalAlignment="Left" Height="128" Grid.Row="2" VerticalAlignment="Top" Width="854" Margin="3,0,0,0"/>
+
+        <Button x:Name="ContinueButton" FontSize="50" Content="Play again" Grid.Row="4" Grid.Column="1" Click="ContinueButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource ="Pictures/button.png"  />
+            </Button.Background>
+        </Button>
+        <Frame Content="Frame" x:Name="cont_frame" Visibility="Hidden" HorizontalAlignment="Left" Height="1028" Margin="0,0,0,0" Grid.RowSpan="8" VerticalAlignment="Top" Width="1920" Grid.ColumnSpan="3"/>
+
+
+    </Grid>
+</Page>

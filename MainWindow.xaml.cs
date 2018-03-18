@@ -31,6 +31,9 @@ namespace MinecraftOC
 
         private void NewGameButton_Click(object sender, RoutedEventArgs e)
         {
+            //NewCharPage newCharPage = new NewCharPage();
+            //this.Content = newCharPage;
+
             GamePage gamePage = new GamePage();
             this.Content = gamePage;
         }

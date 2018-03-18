@@ -20,7 +20,7 @@
         </Style>
 
         <Style TargetType="{x:Type Label}">
-            <Setter Property="TextElement.FontFamily" Value="\Pictures\Minecraft.ttf"></Setter>
+            <Setter Property="TextElement.FontFamily" Value="/Pictures/#font.ttf"></Setter>
         </Style>
         
     </Application.Resources>

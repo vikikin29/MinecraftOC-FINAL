@@ -1,0 +1,40 @@
+﻿<Page x:Class="MinecraftOC.NewCharPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MinecraftOC"
+      mc:Ignorable="d"
+      Title="NewCharPage"  d:DesignHeight="1080" d:DesignWidth="1920"
+      Height="1080" Width="1920" >
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\MinecraftOC\dirt.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="CharNameBox" Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" MaxLength="18" TextAlignment="Center" FontSize="50" FontFamily="Minecraft" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <ImageBrush ImageSource ="C:\MinecraftOC\button.png"></ImageBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="Your Name:" FontSize="72" FontFamily="Minecraft"/>
+        <Button x:Name="CreateButton"  FontSize="35" Content="Create" Click="CreateButton_Click" Grid.Column="1" Grid.Row="4" Margin="0,0,0,50">
+            <Button.Background>
+                <ImageBrush ImageSource ="C:\MinecraftOC\button.png"  />
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

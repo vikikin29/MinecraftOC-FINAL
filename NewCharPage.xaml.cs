@@ -16,20 +16,16 @@ using System.Windows.Shapes;
 namespace MinecraftOC
 {
     /// <summary>
-    /// Interakční logika pro MainWindow.xaml
+    /// Interakční logika pro MenuPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NewCharPage : Page
     {
-        public MainWindow()
+        public NewCharPage()
         {
             InitializeComponent();
         }
-        private void QuitButton_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
 
-        private void NewGameButton_Click(object sender, RoutedEventArgs e)
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
             GamePage gamePage = new GamePage();
             this.Content = gamePage;
