@@ -34,7 +34,7 @@
             </Button.Background>
         </Button>
 
-        <Button x:Name="QuitButton" FontSize="50" Content="Quit" Grid.Row="3" Grid.Column="1" Click="QuitButton_Click">
+        <Button x:Name="QuitButton" FontSize="50" Content="Quit" Grid.Row="3"  Grid.Column="1" Click="QuitButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource ="Pictures/button.png"  ></ImageBrush>
             </Button.Background>
